@@ -13,7 +13,6 @@ print("1. Al iniciar el juego se te asigna una palabra aleatoria, debes intentar
 print("2. Tendras 7 vidas, las cuales se pierden si ingresas una letra incorrecta ")
 print('='*100)
 
-# Lectura de archivo que contiene las palabras
 def archivo(): 
     palabras=[]
     with open("random.txt","r") as archivo:
@@ -22,25 +21,25 @@ def archivo():
         return random.choice(palabras)
         
 palabra= archivo()
-print('_ ' * len(palabra.lower())) # Muestra los espacios/cantidad de letras que posee la palabra
+print('_ ' * len(palabra.lower())) 
 print( )
 
-intentos= 7 # Cantidad de intentos que tendra el usuario
+intentos= 7 
 letras=[]   
 
 while True:
-    # Letras adivinadas
-    letra_adv = input("Adivina una letra: ")       # Solo se puede ingresar letras 
-    if len(letra_adv)!=1 and letra_adv.isalnum() : # si el jugador ingresa un caracter distintos a una letra 
-        print("Por favor solo ingrese una letra")  # se le mostrara el mensaje
+
+    letra_adv = input("Adivina una letra: ")       
+    if len(letra_adv)!=1 and letra_adv.isalnum() :
+        print("Por favor solo ingrese una letra")  
     elif letra_adv.isdigit():
         print("Lo ingresado no es una letra, por favor intentelo denuevo")
     else:
         if letra_adv.lower() in letras:
             print("Esta letra ya fue ingresada, intenta con otra por favor")
         else:
-            letras.append(letra_adv.lower())
- 
+            letras.append(letra_adv.lower()
+            
         if letra_adv.lower() in palabra:
             print( )
             print("¡¡Felicidades!! Adivinaste una letra\n*Aún tienes ", str(intentos),"intentos")
@@ -53,8 +52,7 @@ while True:
             print("*Te quedan " + str(intentos) + " intentos")
             print( )
             break
-
-    # Si al jugador no le quedan intentos entonces pierde el juego 
+            
     if intentos==0:
         print("-"*80)
         print("                                   GAME OVER")
@@ -65,9 +63,9 @@ while True:
         break
  
  
-    condicion = "" # Estado/actualizacion de la palabra 
+    condicion = "" 
  
-    letra_fal = 0 # Letras faltantes
+    letra_fal = 0 
     for letra in palabra:
  
         if letra in letras:
@@ -77,10 +75,10 @@ while True:
             condicion = condicion + "_"
             letra_fal = letra_fal + 1
  
-    # Imprimir palabra con las letras adivinadas
+    
     print(condicion)
  
-    if letra_fal == 0: # Si no faltan letras por adivinar el jugador Gana 
+    if letra_fal == 0:  
         print( )
         print("-"*60)
         print( )
