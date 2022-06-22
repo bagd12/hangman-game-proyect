@@ -1,14 +1,6 @@
-# hangman-game-proyect
-basic code game 
 import random
 import time
 
-# Entradas: random.txt, palabra= archivo(), input letra_adv, letra
-# Salidas: return random.choice(palabras), letra_fal, print('_ ' * len(palabra.lower())), print(mensaje)
-
-#=====================================================================#
-# BIENVENIDA
-#=====================================================================#
 print("-"*80)
 print("                                 HANGMAN GAME")
 print("-"*80)
@@ -16,17 +8,10 @@ print( )
 print("Bienvenidos al juego 'Hangman game'")
 print( )
 time.sleep(2)
-#=====================================================================#
-# INSTRUCCIONES
-#=====================================================================#
 print("-----------------------------------------------\n             Instrucciones de como jugar\n-----------------------------------------------\n")
 print("1. Al iniciar el juego se te asigna una palabra aleatoria, debes intentar adivinarla letra por letra hasta completarla\n")
 print("2. Tendras 7 vidas, las cuales se pierden si ingresas una letra incorrecta ")
 print('='*100)
-
-#=====================================================================#
-# PALABRA SECRETA
-#=====================================================================#
 
 # Lectura de archivo que contiene las palabras
 def archivo(): 
@@ -40,9 +25,6 @@ palabra= archivo()
 print('_ ' * len(palabra.lower())) # Muestra los espacios/cantidad de letras que posee la palabra
 print( )
 
-#=====================================================================#
-# BUCLE PRINCIPAL
-#=====================================================================#
 intentos= 7 # Cantidad de intentos que tendra el usuario
 letras=[]   
 
