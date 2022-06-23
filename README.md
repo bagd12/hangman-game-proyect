@@ -1,8 +1,8 @@
 import random
 import time
 
-#Entradas: lista.txt, input adivina_letra, archivo(), 
-#Salidas: return random.choice(palabras)
+#Entradas: random.txt, palabra= archivo(), input letra_adv, letra
+#Salidas: return random.choice(palabras), letra_fal, print('_ ' * len(palabra.lower())), print(mensaje)
 
 #Lista de palabras para adivinar
 lista= open("random.txt", "r")
